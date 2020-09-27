@@ -2,3 +2,10 @@ language: go
 go:
  - "1.15"
  - master
+env:
+  - GO111MODULE=on
+install: true
+before_script:
+  - go get golang.org/x/tools/cmd/goimports
+  - go mod vendor
+script: make test
